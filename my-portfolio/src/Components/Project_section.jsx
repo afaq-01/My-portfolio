@@ -13,7 +13,7 @@ const projects = [
       "Full-featured e-commerce platform with admin dashboard, payments, orders and more.",
     stack: "MERN Stack",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/afaq-01/E-commerce-Website",
   },
   {
     icon: MessageCircle,
@@ -23,7 +23,7 @@ const projects = [
       "WhatsApp like real-time chat app with 1-1 messaging, online status and more.",
     stack: "MERN Stack",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/afaq-01/Chat-App",
   },
   {
     icon: Bot,
@@ -33,7 +33,7 @@ const projects = [
       "AI chatbot integrated with OpenAI API. Ask anything, get intelligent answers instantly.",
     stack: "MERN Stack",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/afaq-01/ChatBot",
   },
 ];
 
