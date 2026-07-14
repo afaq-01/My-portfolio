@@ -67,33 +67,33 @@ function ProjectCard({ icon: Icon, image, title, description, stack, liveUrl, gi
     <div
       ref={ref}
       style={{ transitionDelay: isInView ? `${delay}ms` : "0ms" }}
-      className={`flex flex-col rounded-xl border border-neutral-800 bg-neutral-900/60 overflow-hidden hover:border-purple-500/50 transition-all duration-700 ${
+      className={`flex flex-col rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 overflow-hidden hover:border-purple-500/50 transition-all duration-700 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       {/* Thumbnail with overlapping icon badge */}
-      <div className="relative bg-neutral-800">
+      <div className="relative bg-neutral-200 dark:bg-neutral-800">
         <img src={image} alt={title} className="w-full h-auto block" />
-        <div className="absolute -bottom-4 left-4 w-9 h-9 rounded-full bg-purple-600 border-4 border-black flex items-center justify-center">
+        <div className="absolute -bottom-4 left-4 w-9 h-9 rounded-full bg-purple-600 border-4 border-white dark:border-black flex items-center justify-center">
           <Icon size={16} className="text-white" />
         </div>
       </div>
 
       {/* Content */}
       <div className="flex flex-col flex-1 px-4 pt-8 pb-4">
-        <h3 className="text-white font-semibold text-sm mb-2">{title}</h3>
-        <p className="text-neutral-400 text-xs leading-relaxed mb-4 flex-1">
+        <h3 className="text-neutral-900 dark:text-white font-semibold text-sm mb-2">{title}</h3>
+        <p className="text-neutral-600 dark:text-neutral-400 text-xs leading-relaxed mb-4 flex-1">
           {description}
         </p>
 
-        <div className="flex items-center justify-between pt-3 border-t border-neutral-800">
+        <div className="flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-800">
           <span className="text-xs text-neutral-500">{stack}</span>
           <div className="flex items-center gap-3">
             <a
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-purple-500 transition-colors"
+              className="text-neutral-500 dark:text-neutral-400 hover:text-purple-500 transition-colors"
               aria-label={`Live link for ${title}`}
             >
               <LinkIcon size={16} />
@@ -102,7 +102,7 @@ function ProjectCard({ icon: Icon, image, title, description, stack, liveUrl, gi
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-purple-500 transition-colors"
+              className="text-neutral-500 dark:text-neutral-400 hover:text-purple-500 transition-colors"
               aria-label={`GitHub repo for ${title}`}
             >
               <SiGithub size={16} />
@@ -118,7 +118,7 @@ export default function Projects() {
   const [headerRef, headerInView] = useInView();
 
   return (
-    <section className="bg-black py-20 overflow-hidden">
+    <section id="projects" className="bg-white dark:bg-black py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         {/* Header */}
         <div
@@ -128,16 +128,16 @@ export default function Projects() {
           }`}
         >
           <div>
-            <span className="text-xs font-medium text-purple-500 tracking-wide mb-2 block">
+            <span className="text-xs font-medium text-purple-600 dark:text-purple-500 tracking-wide mb-2 block">
               FEATURED PROJECTS
             </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white tracking-tight">
               Some Things I've Built
             </h2>
           </div>
           <a
             href="#projects"
-            className="hidden sm:flex items-center gap-1 text-sm text-purple-400 hover:text-purple-300 transition-colors"
+            className="hidden sm:flex items-center gap-1 text-sm text-purple-600 dark:text-purple-400 hover:text-purple-500 dark:hover:text-purple-300 transition-colors"
           >
             View all projects
             <LinkIcon size={14} />

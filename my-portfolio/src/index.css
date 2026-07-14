@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+/* Enables class-based dark mode (Tailwind v4 syntax).
+   Without this line, dark: variants follow the OS setting instead
+   of the .dark class on <html>, and our toggle button won't do anything. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Smooth scroll for every anchor link (#home, #about, #contact, etc.)
+   across the whole site — navbar, hero CTA, footer, anywhere. */
+html {
+  scroll-behavior: smooth;
+}

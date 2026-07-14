@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "../Components/Themecontext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   const links = [
     { label: "Home", href: "#home" },
@@ -15,13 +17,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="relative bg-neutral-950 border-b border-neutral-800">
+    <nav className="relative bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800">
       <div className="w-full px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
          <a 
             href="#"
-            className="flex items-center text-white font-semibold tracking-tight text-lg"
+            className="flex items-center text-neutral-900 dark:text-white font-semibold tracking-tight text-lg"
           >
             <img src="/logo.png" alt="logo" className="h-[50px] w-[50px]" />
             Afaq
@@ -33,7 +35,7 @@ export default function Navbar() {
             <a  
                 key={link.label}
                 href={link.href}
-                className="text-sm text-neutral-400 hover:text-purple-500 transition-colors"
+                className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-purple-500 transition-colors"
               >
                 {link.label}
               </a>
@@ -43,8 +45,8 @@ export default function Navbar() {
           {/* Theme toggle */}
           <div className="hidden md:flex items-center">
             <button
-              onClick={() => setIsDark(!isDark)}
-              className="text-neutral-300 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-md p-2 transition-colors"
+              onClick={toggleTheme}
+              className="text-neutral-500 dark:text-neutral-300 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-md p-2 transition-colors"
               aria-label="Toggle theme"
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
@@ -54,7 +56,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-neutral-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-md p-1"
+            className="md:hidden text-neutral-500 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-md p-1"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
@@ -65,21 +67,21 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-neutral-800 px-6 py-4 space-y-4 bg-neutral-950">
+        <div className="md:hidden border-t border-neutral-200 dark:border-neutral-800 px-6 py-4 space-y-4 bg-white dark:bg-neutral-950">
           {links.map((link) => (
           <a  
               key={link.label}
               href={link.href}
-              className="block text-sm text-neutral-300 hover:text-white transition-colors"
+              className="block text-sm text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-4 border-t border-neutral-800 flex items-center">
+          <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center">
             <button
-              onClick={() => setIsDark(!isDark)}
-              className="flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition-colors"
+              onClick={toggleTheme}
+              className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
             >
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
               {isDark ? "Light mode" : "Dark mode"}

@@ -58,7 +58,7 @@ export default function Hero() {
   }, [typedText, isDeleting, fullText]);
 
   return (
-    <section className="relative bg-black overflow-hidden">
+    <section id="home" className="relative bg-white dark:bg-black overflow-hidden">
       <div className="relative max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         {/* Left: Text */}
         <div
@@ -68,23 +68,23 @@ export default function Hero() {
           }`}
         >
           {/* Badge */}
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900 text-xs text-neutral-400 mb-6">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 text-xs text-neutral-500 dark:text-neutral-400 mb-6">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Available for freelance work
           </span>
 
           {/* Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight min-h-[1.2em]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight min-h-[1.2em]">
             {typedText}
             <span className="inline-block w-[3px] h-[0.9em] bg-purple-500 ml-1 align-middle animate-pulse" />
           </h1>
 
-          <p className="mt-2 text-2xl md:text-3xl font-semibold text-purple-500">
+          <p className="mt-2 text-2xl md:text-3xl font-semibold text-purple-600 dark:text-purple-500">
             Full Stack Developer
           </p>
 
           {/* Subtext */}
-          <p className="mt-6 text-neutral-400 text-base md:text-lg max-w-md">
+          <p className="mt-6 text-neutral-600 dark:text-neutral-400 text-base md:text-lg max-w-md">
             I build fast, responsive, and user-friendly web applications using
             modern technologies. Let's turn your ideas into reality.
           </p>
@@ -100,7 +100,7 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              className="flex items-center gap-2 text-sm font-medium border border-neutral-700 text-neutral-300 px-6 py-3 rounded-md hover:border-neutral-500 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-sm font-medium border border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 px-6 py-3 rounded-md hover:border-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
             >
               Contact Me
               <Mail size={16} />
@@ -120,7 +120,7 @@ export default function Hero() {
             <img
               src="/image.jpeg"
               alt="Afaq"
-              className="relative w-full h-full max-w-sm md:max-w-md object-cover rounded-full ring-4 ring-[#b648e3] ring-offset-4 ring-offset-black"
+              className="relative w-full h-full max-w-sm md:max-w-md object-cover rounded-full ring-4 ring-[#b648e3] ring-offset-4 ring-offset-white dark:ring-offset-black"
             />
           </div>
         </div>
