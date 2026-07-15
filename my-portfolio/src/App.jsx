@@ -1,5 +1,7 @@
 import About from "./Components/About_section"
 import TechStack from "./Components/About_section"
+import Contect from "./Components/Contect_section"
+import ContactSection from "./Components/Contect_section"
 import Footer from "./Components/Footer"
 import Hero from "./Components/Hero_section"
 import Navbar from "./Components/NavBar"
@@ -17,13 +19,9 @@ const App = () => {
                 <About />
                 <Projects />
                 <PortfolioStats />
+                <Contect />
                 <Footer />
             </ThemeProvider>
-
-
-
-
-
         </>
     )
 }
