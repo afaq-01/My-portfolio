@@ -34,8 +34,8 @@ const CONTACTS = [
   },
   {
     label: "Phone",
-    value: "+92 3495615693",
-    href: "+92 3495615693",
+    value: "+92 349 5615693",
+    href: "tel:+923495615693",
     icon: Phone,
   },
   {
@@ -54,8 +54,8 @@ const CONTACTS = [
 
 export default function Contact() {
   return (
-    <section className="bg-black text-white">
-      <div className="max-w-xl mx-auto">
+    <section id="contact" className="scroll-mt-20 bg-black text-white">
+      <div className="max-w-xl mx-auto px-6 py-20">
         <p className="text-xs tracking-widest uppercase text-purple-600 mb-3">
           Get in touch
         </p>
